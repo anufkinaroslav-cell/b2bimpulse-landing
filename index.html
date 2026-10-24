@@ -173,6 +173,25 @@ footer{padding-block:32px 40px;color:var(--muted);font-size:14px}
   .aud,.col{padding:24px}
 }
 
+
+/* Финал: регистрация или звонок */
+.finale{display:grid;grid-template-columns:1.35fr 1fr;gap:20px}
+.fin-main{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);border-radius:26px;padding:40px;display:flex;flex-direction:column;gap:16px;box-shadow:0 24px 60px -30px rgba(91,63,214,.8)}
+.fin-main::before{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle, rgba(124,92,255,.55), transparent 65%);pointer-events:none}
+.fin-main::after{content:"";position:absolute;left:-60px;bottom:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle, rgba(47,211,198,.3), transparent 65%);pointer-events:none}
+.fin-main > *{position:relative}
+.fin-main h2{font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.15}
+.fin-main p{color:var(--hero-muted);max-width:46ch}
+.fin-tag{align-self:start;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(47,211,198,.16);color:#2FD3C6}
+.fin-tag.soft{background:var(--violet-soft);color:var(--violet)}
+.fin-btn{align-self:start;margin-top:6px;padding:18px 30px;font-size:18px;box-shadow:0 12px 30px -10px rgba(124,92,255,.9)}
+.fin-side{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:34px;display:flex;flex-direction:column;gap:14px}
+.fin-side h3{font-size:22px;font-weight:700}
+.fin-side p{color:var(--muted)}
+.fin-phone{margin-top:auto;align-self:start;font-family:var(--f-display);font-weight:700;font-size:clamp(20px,2.4vw,26px);color:var(--violet);text-decoration:none;padding:12px 18px;border:2px solid var(--violet);border-radius:14px;white-space:nowrap}
+.fin-phone:hover{background:var(--violet-soft)}
+.fin-phone:focus-visible{outline:3px solid #2FD3C6;outline-offset:3px}
+@media (max-width:820px){.finale{grid-template-columns:1fr}.fin-main{padding:28px 22px}.fin-side{padding:26px 22px}.fin-btn{align-self:stretch;justify-content:center}}
 </style>
 
 <header class="hero">
@@ -282,6 +301,22 @@ footer{padding-block:32px 40px;color:var(--muted);font-size:14px}
     </div>
   </section>
 
+  <section class="block" id="start">
+    <div class="finale">
+      <div class="fin-main">
+        <span class="fin-tag">Всё понравилось?</span>
+        <h2>Зарегистрируйте компанию и&nbsp;найдите первого партнёра уже&nbsp;сегодня</h2>
+        <p>Регистрация занимает пару минут: ИНН, контакты и роль. Дальше — проверенные компании и запрос в один клик.</p>
+        <a class="btn fin-btn" href="https://anufkinaroslav-cell.github.io/b2bimpulse/">Пройти регистрацию →</a>
+      </div>
+      <div class="fin-side">
+        <span class="fin-tag soft">Заинтересовало, но есть вопросы?</span>
+        <h3>Позвоните — расскажем всё лично</h3>
+        <p>Подскажем, какой тариф подойдёт, и ответим на любые вопросы о проверке.</p>
+        <a class="fin-phone" href="tel:+79651771500">+7 965 177-15-00</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="wrap">Импульс · B2B-платформа для поиска проверенных контрагентов</footer>
