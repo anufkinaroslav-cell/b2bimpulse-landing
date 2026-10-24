@@ -183,8 +183,8 @@ footer{padding-block:32px 40px;color:var(--muted);font-size:14px}
       <h1>Проверенные партнёры для&nbsp;малого бизнеса</h1>
       <p class="sub">Импульс — база перевозчиков, поставщиков, складов и подрядчиков, у которых проверены документы. Без досок объявлений, десятка звонков и фирм-однодневок.</p>
       <div class="roles">
-        <a class="role" href="#buyer"><span class="role-ico">🔍</span><span><b>Я ищу партнёра</b><small>перевозчик, склад, поставщик</small></span></a>
-        <a class="role" href="#provider"><span class="role-ico">🤝</span><span><b>Я предлагаю услуги</b><small>хочу, чтобы меня находили</small></span></a>
+        <a class="role" href="#who"><span class="role-ico">🔍</span><span><b>Я ищу партнёра</b><small>перевозчик, склад, поставщик</small></span></a>
+        <a class="role" href="#price"><span class="role-ico">🤝</span><span><b>Я предлагаю услуги</b><small>хочу, чтобы меня находили</small></span></a>
       </div>
       <p class="proof"><b>✓</b>Каждая компания проверена по ОГРН и выписке ЕГРЮЛ</p>
     </div>
@@ -201,31 +201,15 @@ footer{padding-block:32px 40px;color:var(--muted);font-size:14px}
 
 <main class="wrap">
   <section class="block" id="who">
-    <div class="head">
-      <span class="eyebrow">Для кого</span>
-      <h2>Две стороны одной сделки</h2>
-    </div>
-    <div class="audience">
-      <article class="aud buyer" id="buyer">
-        <span class="aud-tag">Ищете партнёра</span>
-        <h3>Владелец небольшой компании</h3>
-        <p class="pain">Вы сами ищете перевозчика под партию, склад на сезон или поставщика упаковки и каждый раз проверяете фирму вручную.</p>
-        <ul class="feat">
-          <li>Компании нужной категории в вашем регионе</li>
-          <li>Условия, рейтинг и статус проверки документов</li>
-          <li>Прямой контакт, без посредников и наценки</li>
-        </ul>
-      </article>
-      <article class="aud provider" id="provider">
-        <span class="aud-tag">Предлагаете услуги</span>
-        <h3>Перевозчик, склад, поставщик, подрядчик</h3>
-        <p class="pain">Вы работаете честно, но заказчики боятся новых контрагентов и выбирают тех, кого уже знают.</p>
-        <ul class="feat">
-          <li>Отметка «Проверено» на карточке компании</li>
-          <li>Место в белой базе, где вас ищут заказчики</li>
-          <li>Запросы приходят напрямую от бизнеса</li>
-        </ul>
-      </article>
+    <div class="who">
+      <div class="head" style="margin:0">
+        <span class="eyebrow">Для кого</span>
+        <h2>Для владельца небольшой компании</h2>
+      </div>
+      <div>
+        <p>Вы сами ищете партнёров: перевозчика под партию, склад на сезон, поставщика упаковки. Сейчас это доски объявлений, десяток звонков и риск нарваться на фирму, которой нет в реестре.</p>
+        <p>В Импульсе вы сразу видите компании нужной категории в своём регионе, их условия, рейтинг и статус проверки документов. Пишете напрямую, без посредников.</p>
+      </div>
     </div>
   </section>
 
@@ -298,38 +282,10 @@ footer{padding-block:32px 40px;color:var(--muted);font-size:14px}
     </div>
   </section>
 
-  <section class="block" id="start">
-    <div class="cta">
-      <div>
-        <h2>Позвоните, и мы подключим вашу компанию</h2>
-        <p class="lead">Скажите, кого вы ищете или какие услуги предлагаете. Расскажем про доступ к белой базе и запустим проверку документов.</p>
-      </div>
-      <div class="contact">
-        <span class="label">Телефон</span>
-        <a class="value" id="contact-value" href="tel:+79651771500">+7 965 177-15-00</a>
-        <div class="contact-actions">
-          <a class="btn call" href="tel:+79651771500">Позвонить</a>
-          <button class="copy" id="copy-btn" type="button">Скопировать номер</button>
-        </div>
-        <span class="note" id="copy-note" hidden>Скопировано</span>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="wrap">Импульс · B2B-платформа для поиска проверенных контрагентов</footer>
 
-<script>
-(function(){
-  var btn=document.getElementById('copy-btn'), val=document.getElementById('contact-value'), note=document.getElementById('copy-note');
-  btn.addEventListener('click',function(){
-    var text=val.textContent.trim();
-    function done(){note.textContent='Скопировано';note.hidden=false;setTimeout(function(){note.hidden=true},2000)}
-    function fallback(){var r=document.createRange();r.selectNodeContents(val);var s=window.getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Выделено — скопируйте вручную';note.hidden=false}
-    try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
-  });
-})();
-</script>
 
 </body>
 </html>
